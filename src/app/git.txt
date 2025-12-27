@@ -1,3 +1,5 @@
 this text belongs to git
 
-second message
+second message typed 
+
+third message typed
