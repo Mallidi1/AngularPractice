@@ -1,0 +1,73 @@
+<!-- <div class="container mt-4">
+
+  <div class="d-flex justify-content-end mt-2 mb-2">
+    <button (click)="goBack()" class="btn btn-secondary">Back</button>
+  </div>
+
+</div> -->
+
+<div class="container mt-4" *ngIf="userDetail">
+
+  <!-- Back button -->
+  <div class="d-flex justify-content-end mb-3">
+    <button class="btn btn-secondary" (click)="goBack()">Back</button>
+  </div>
+
+  <!-- User Card -->
+  <div class="card shadow-lg border-0">
+    <div class="card-header bg-primary text-white">
+      <h5 class="mb-0">
+        {{ userDetail.firstName }} {{ userDetail.lastName }}
+      </h5>
+      <small>{{ userDetail.role }}</small>
+    </div>
+
+    <div class="card-body">
+
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <strong>Email:</strong> {{ userDetail.email }}
+        </div>
+        <div class="col-md-6">
+          <strong>Phone:</strong> {{ userDetail.phone }}
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <strong>Date of Birth:</strong> {{ userDetail.dateOfBirth }}
+        </div>
+        <div class="col-md-6">
+          <strong>Gender:</strong> {{ userDetail.gender }}
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <strong>Status:</strong>
+          <span class="badge" [ngClass]="userDetail.status === 'Active' ? 'bg-success' : 'bg-danger'">
+            {{ userDetail.status }}
+          </span>
+        </div>
+        <div class="col-md-6">
+          <strong>Last Login:</strong> {{ userDetail.lastLogin }}
+        </div>
+      </div>
+
+      <hr />
+
+      <!-- Address -->
+      <h6 class="text-muted">Address</h6>
+      <p class="mb-0">
+        {{ userDetail.address.street }},<br />
+        {{ userDetail.address.city }}, {{ userDetail.address.state }},<br />
+        {{ userDetail.address.country }} - {{ userDetail.address.pincode }}
+      </p>
+
+    </div>
+
+    <div class="card-footer text-muted">
+      Account Created On: {{ userDetail.createdAt }}
+    </div>
+  </div>
+</div>

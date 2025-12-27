@@ -1,0 +1,6 @@
+/* Show the dropdown menu on hover */
+.nav-item.dropdown:hover .dropdown-menu {
+  display: block;
+  margin-top: 0;
+  /* Prevents a gap that might close the menu when moving the mouse down */
+}

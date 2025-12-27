@@ -1,0 +1,50 @@
+<div class="container mt-4">
+
+  <div *ngFor="let category of category" class="mb-5">
+    <!-- <div> -->
+
+    <!-- Category Title -->
+    <h3 class="mb-3 text-primary">
+      {{ category.categoryName }}
+    </h3>
+
+    <div class="row g-4">
+
+      <!-- Product Card -->
+      <div class="col-md-4" *ngFor="let item of category.items">
+        <div class="card h-100 shadow-sm">
+
+          <img [src]="item.image" class="card-img-top" alt="{{ item.name }}"
+            style="height: 180px; object-fit: cover;" />
+
+          <div class="card-body">
+            <h5 class="card-title">{{ item.name }}</h5>
+            <p class="text-muted mb-1">{{ item.brand }}</p>
+
+            <p class="mb-1">
+              <strong>₹{{ item.price }}</strong>
+            </p>
+
+            <p class="mb-1">
+              ⭐ {{ item.rating }} / 5
+            </p>
+
+            <p class="badge" [ngClass]="item.stock > 0 ? 'bg-success' : 'bg-danger'">
+              {{ item.stock > 0 ? 'In Stock' : 'Out of Stock' }}
+            </p>
+          </div>
+
+          <div class="card-footer bg-white border-0">
+            <button class="btn btn-primary w-100">
+              View Details
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

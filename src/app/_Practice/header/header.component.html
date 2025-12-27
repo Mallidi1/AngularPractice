@@ -1,0 +1,48 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand">Navbar</a>
+    <ul class="navbar-nav">
+      <!-- productsgrid -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false"
+          routerLink="/product/productsgrid" style="cursor: pointer">
+          Product
+        </a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" routerLink="/product/productsgrid"
+              [queryParams]="{'category' : 'Electronics'}">Electronics</a></li>
+          <li>
+            <hr class="dropdown-divider">
+          </li>
+          <li><a class="dropdown-item" routerLink="/product/productsgrid"
+              [queryParams]="{'category': 'Fashion'}">Fashion</a>
+          </li>
+          <hr class="dropdown-divider">
+          <li><a class="dropdown-item" routerLink="/product/productsgrid"
+              [queryParams]="{'category':'Groceries'}">Groceries</a></li>
+        </ul>
+        <!-- studentslist -->
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/Student/studentslist">StudentList</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/Student/studentdetailes">StudentDetails</a>
+      </li>
+      <!-- practice,card,parent,child -->
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/Practice/child">Child</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/Practice/parent">Parent</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/Practice/card">Card</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/Practice/cardlist/:id">CardList</a>
+      </li>
+
+    </ul>
+  </div>
+</nav>

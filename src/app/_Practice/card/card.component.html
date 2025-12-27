@@ -1,0 +1,36 @@
+<div class="container mt-4">
+
+  <div class="d-flex justify-content-end mt-2 mb-2">
+    <button (click)="goBack()" class="btn btn-secondary">Back</button>
+  </div>
+
+
+  <div class="row g-4">
+    <div class="col-md-4" *ngFor="let user of cardDetails">
+
+      <div class="card user-card shadow-sm h-100">
+
+        <!-- Avatar -->
+        <div class="card-header text-center bg-light">
+          <img src="https://i.pravatar.cc/100?u={{user.id}}" alt="User Avatar" class="rounded-circle" />
+        </div>
+
+        <!-- Card Body -->
+        <div class="card-body text-center">
+          <h5 class="card-title">{{ user.firstName }}</h5>
+          <p class="card-text text-muted">{{ user.email }}</p>
+
+          <span class="badge bg-success mb-2">{{user.status}}</span>
+        </div>
+
+        <!-- Card Footer -->
+        <div class="card-footer bg-white text-center">
+          <button class="btn btn-primary w-100" [routerLink]="['/Practice/cardlist', user.id]">
+            View Profile
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
