@@ -1,1 +1,9 @@
-<p>parent works!</p>
+<!------------------parent to child-------------------------->
+
+<!-- <div>{{data1}}</div> -->
+<!-- <app-child [d1]="data2"></app-child> -->
+
+<!------------------child to parent--------------------------->
+
+<div>{{cData}}</div>
+<app-child (custome)="cData=$event"></app-child>
